@@ -1,0 +1,38 @@
+<div class= "row container" ng-controller ="domicilio">
+  <H1>Clientes</H1>
+  <h3>buscar por telefono:</h3>
+  <input type="number" ng-model="tel_query" ng-change ="actualizar()"> 
+</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Telefono</th>
+        <th>Calle</th>
+        <th>Colonia</th>
+        <th>Numero interior</th>
+        <th>Numero exterior</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  
+    <tbody ng-repeat="cliente in clientes">
+      <td>{{cliente.nombre}}</td>
+      <td>{{cliente.telefono}}</td>
+      <td>{{cliente.calle}}</td>
+      <td>{{cliente.colonia}}</td>
+      <td>{{cliente.numero_interior}}</td>
+      <td>{{cliente.numero_exterior}}</td>
+      <td><a href="{{cliente.show}}">Mostrar</a></td>
+      <td><a href="{{cliente.edit}}">Editar</a></td>
+      <td><a href="" ng-click="ordenar(cliente.id)">Ordenar</a></td>
+      <td></td>
+      
+     
+    </tbody>
+  </table>
+  
+  <br>
+  
+  <%= link_to 'Crear cliente', new_customer_path %>
+</div>  
