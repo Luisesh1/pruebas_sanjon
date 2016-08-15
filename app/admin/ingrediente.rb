@@ -13,7 +13,7 @@ ActiveAdmin.register Ingrediente do
 #   permitted
 # end
 
-	permit_params :nombre,:stock, :measurement_units_id
+	permit_params :nombre,:stock, :measurement_unit_id
 	index do
 	  column :nombre
 	  column :stock
@@ -26,7 +26,7 @@ ActiveAdmin.register Ingrediente do
 	    f.inputs "Unidad de medida" do
 	      f.input :nombre
 	      f.input :stock
-	      f.input :measurement_units_id,:as => :select, :collection => MeasurementUnit.all.map{ |car| [car.name, car.id] }
+	      f.input :measurement_unit_id,:as => :select, :collection => MeasurementUnit.all.map{ |car| [car.name, car.id] }
 	    end
 	    actions
     end
