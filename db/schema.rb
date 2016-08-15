@@ -72,13 +72,13 @@ ActiveRecord::Schema.define(version: 20160812092927) do
 
   create_table "ingredientes", force: :cascade do |t|
     t.string   "nombre"
-    t.integer  "MeasurementUnit_id"
+    t.integer  "measurement_units_id"
     t.float    "stock"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
-  add_index "ingredientes", ["MeasurementUnit_id"], name: "index_ingredientes_on_MeasurementUnit_id"
+  add_index "ingredientes", ["measurement_units_id"], name: "index_ingredientes_on_measurement_units_id"
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
